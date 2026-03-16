@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bouwbedrijf Van der Woude — U de kavel, wij de woning</title>
+<meta name="description" content="Bouwbedrijf Van der Woude bouwt al 50 jaar duurzame, energiezuinige houtskeletbouw woningen in Noord-Nederland. U de kavel, wij de woning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blauw:        #1B3A5C;
+    --blauw-mid:    #2A5480;
+    --blauw-licht:  #3D7AB5;
+    --blauw-zacht:  #EBF2FA;
+    --wit:          #FFFFFF;
+    --grijs:        #F4F6F8;
+    --grijs-mid:    #D8DDE4;
+    --grijs-donker: #6B7A8D;
+    --tekst:        #1A2430;
+    --tekst-zacht:  #4A5A6B;
+    --accent:       #C8A84B;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    color: var(--tekst);
+    background: var(--wit);
+    overflow-x: hidden;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(27,58,92,0.97);
+    backdrop-filter: blur(8px);
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+
+  .nav-logo-icon {
+    width:34px; height:34px;
+    background:var(--accent);
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  .nav-logo-icon svg { width:18px; height:18px; }
+
+  .nav-logo-tekst {
+    font-family:'Merriweather',serif;
+    font-size:15px; font-weight:700; color:white; line-height:1.2;
+  }
+
+  .nav-logo-tekst span {
+    display:block;
+    font-family:'Source Sans 3',sans-serif;
+    font-size:10px; font-weight:400;
+    letter-spacing:0.12em; text-transform:uppercase;
+    color:rgba(255,255,255,0.45);
+  }
+
+  .nav-links { display:flex; gap:28px; list-style:none; align-items:center; }
+
+  .nav-links a {
+    color:rgba(255,255,255,0.7);
+    text-decoration:none; font-size:13px; font-weight:400;
+    letter-spacing:0.03em; transition:color 0.2s;
+  }
+
+  .nav-links a:hover { color:white; }
+
+  .nav-cta {
+    background:var(--accent) !important;
+    color:var(--blauw) !important;
+    padding:9px 18px !important;
+    font-weight:600 !important;
+  }
+
+  /* HERO */
+  .hero {
+    height:100vh; min-height:640px;
+    position:relative; display:flex; align-items:flex-end; overflow:hidden;
+  }
+
+  .hero-img {
+    position:absolute; inset:0;
+    background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1800&q=80');
+    background-size:cover; background-position:center 40%;
+    animation:zoomOut 8s ease forwards;
+  }
+
+  @keyframes zoomOut {
+    from { transform:scale(1.05); }
+    to   { transform:scale(1.0); }
+  }
+
+  .hero-overlay {
+    position:absolute; inset:0;
+    background:linear-gradient(to top, rgba(27,58,92,0.92) 0%, rgba(27,58,92,0.45) 45%, rgba(27,58,92,0.1) 100%);
+  }
+
+  .hero-content {
+    position:relative; z-index:2;
+    padding:0 80px 80px; max-width:860px;
+  }
+
+  .hero-sup {
+    display:inline-block;
+    font-size:11px; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--accent); font-weight:600; margin-bottom:20px;
+    animation:fadeUp 0.7s ease both;
+  }
+
+  .hero-kop {
+    font-family:'Merriweather',serif;
+    font-size:clamp(38px,5.5vw,72px); font-weight:700;
+    color:white; line-height:1.15; margin-bottom:20px;
+    animation:fadeUp 0.7s 0.1s ease both;
+  }
+
+  .hero-kop em { font-style:italic; color:rgba(255,255,255,0.7); }
+
+  .hero-sub {
+    font-size:clamp(15px,1.8vw,18px);
+    color:rgba(255,255,255,0.68); line-height:1.78;
+    max-width:520px; margin-bottom:36px;
+    animation:fadeUp 0.7s 0.2s ease both;
+  }
+
+  .hero-knoppen {
+    display:flex; gap:14px; flex-wrap:wrap;
+    animation:fadeUp 0.7s 0.3s ease both;
+  }
+
+  .btn-goud {
+    background:var(--accent); color:var(--blauw);
+    padding:14px 28px; font-size:14px; font-weight:600;
+    text-decoration:none; letter-spacing:0.03em;
+    transition:background 0.2s; display:inline-block;
+  }
+
+  .btn-goud:hover { background:#d9b85a; }
+
+  .btn-wit {
+    background:transparent; color:white;
+    padding:14px 28px; font-size:14px; font-weight:400;
+    text-decoration:none; border:1.5px solid rgba(255,255,255,0.4);
+    transition:border-color 0.2s, background 0.2s; display:inline-block;
+  }
+
+  .btn-wit:hover { border-color:white; background:rgba(255,255,255,0.07); }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(20px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  /* STAT BAR */
+  .stat-bar {
+    background:var(--blauw);
+    display:grid; grid-template-columns:repeat(4,1fr);
+    border-top:3px solid var(--accent);
+  }
+
+  .stat-item {
+    padding:26px 28px; border-right:1px solid rgba(255,255,255,0.08);
+    text-align:center;
+  }
+
+  .stat-item:last-child { border-right:none; }
+
+  .stat-getal {
+    font-family:'Merriweather',serif;
+    font-size:30px; font-weight:700; color:var(--accent);
+    line-height:1; margin-bottom:6px;
+  }
+
+  .stat-label { font-size:11px; color:rgba(255,255,255,0.45); letter-spacing:0.04em; }
+
+  /* SECTIONS */
+  .sectie { padding:84px 80px; }
+  .sectie-binnen { max-width:1160px; margin:0 auto; }
+
+  .sectie-sup {
+    font-size:11px; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--blauw-licht); font-weight:600; margin-bottom:12px;
+  }
+
+  .sectie-kop {
+    font-family:'Merriweather',serif;
+    font-size:clamp(26px,3.5vw,42px); font-weight:700;
+    color:var(--blauw); line-height:1.2; margin-bottom:16px;
+  }
+
+  .sectie-kop em { font-style:italic; color:var(--blauw-licht); }
+
+  .sectie-intro {
+    font-size:16px; color:var(--tekst-zacht);
+    line-height:1.8; max-width:580px;
+  }
+
+  /* FOTOGRID */
+  .fotogrid {
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    grid-template-rows:260px 260px;
+    gap:4px; margin-top:48px;
+  }
+
+  .foto { overflow:hidden; position:relative; background:var(--grijs); }
+
+  .foto img {
+    width:100%; height:100%; object-fit:cover;
+    transition:transform 0.5s ease;
+  }
+
+  .foto:hover img { transform:scale(1.04); }
+  .foto-groot { grid-row:1/3; }
+
+  .foto-label {
+    position:absolute; bottom:0; left:0; right:0;
+    background:linear-gradient(transparent, rgba(27,58,92,0.75));
+    padding:20px 14px 10px;
+    font-size:11px; letter-spacing:0.07em; text-transform:uppercase;
+    color:rgba(255,255,255,0.85); font-weight:500;
+  }
+
+  /* WERKWIJZE */
+  .werkwijze-grid {
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:64px; margin-top:48px; align-items:start;
+  }
+
+  .stap-lijst { display:flex; flex-direction:column; gap:0; }
+
+  .stap {
+    display:flex; gap:20px;
+    padding:22px 0; border-bottom:1px solid var(--grijs-mid);
+  }
+
+  .stap:first-child { padding-top:0; }
+  .stap:last-child { border-bottom:none; }
+
+  .stap-nr {
+    font-family:'Merriweather',serif;
+    font-size:12px; font-weight:700; color:var(--blauw-licht);
+    min-width:26px; padding-top:2px;
+  }
+
+  .stap-body strong {
+    display:block; font-size:15px; font-weight:600;
+    color:var(--blauw); margin-bottom:5px;
+  }
+
+  .stap-body p { font-size:14px; color:var(--tekst-zacht); line-height:1.7; }
+
+  .inclusief-blok { background:var(--blauw); padding:36px; }
+
+  .inclusief-kop {
+    font-family:'Merriweather',serif;
+    font-size:18px; font-weight:700; color:white; margin-bottom:5px;
+  }
+
+  .inclusief-sub {
+    font-size:11px; color:rgba(255,255,255,0.4);
+    margin-bottom:26px; letter-spacing:0.05em; text-transform:uppercase;
+  }
+
+  .inclusief-lijst { list-style:none; display:flex; flex-direction:column; gap:11px; }
+
+  .inclusief-lijst li {
+    display:flex; align-items:center; gap:12px;
+    font-size:14px; color:rgba(255,255,255,0.8);
+  }
+
+  .check {
+    width:17px; height:17px; background:var(--accent);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+
+  .check svg { width:9px; height:9px; }
+
+  .woningborg {
+    margin-top:22px; padding-top:18px;
+    border-top:1px solid rgba(255,255,255,0.1);
+    font-size:11px; color:rgba(255,255,255,0.3);
+    letter-spacing:0.07em; text-transform:uppercase;
+  }
+
+  /* FOTO BREED */
+  .foto-breed { width:100%; height:420px; overflow:hidden; position:relative; }
+
+  .foto-breed img {
+    width:100%; height:100%; object-fit:cover; object-position:center 55%;
+  }
+
+  .foto-breed-overlay {
+    position:absolute; inset:0; background:rgba(27,58,92,0.52);
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  .foto-breed-tekst { text-align:center; color:white; }
+
+  .foto-breed-tekst h2 {
+    font-family:'Merriweather',serif;
+    font-size:clamp(26px,4vw,50px); font-weight:700;
+    font-style:italic; line-height:1.3; margin-bottom:24px;
+  }
+
+  /* HSB */
+  .hsb-grid {
+    display:grid; grid-template-columns:repeat(3,1fr);
+    gap:1px; background:var(--grijs-mid); margin-top:48px;
+  }
+
+  .hsb-kaart {
+    background:white; padding:30px 26px;
+    border-top:3px solid transparent;
+    transition:border-color 0.2s, background 0.2s;
+  }
+
+  .hsb-kaart:hover { border-top-color:var(--blauw-licht); background:var(--blauw-zacht); }
+
+  .hsb-nr {
+    font-family:'Merriweather',serif;
+    font-size:26px; font-weight:700; color:var(--grijs-mid);
+    margin-bottom:12px; line-height:1;
+  }
+
+  .hsb-kaart-kop { font-size:15px; font-weight:600; color:var(--blauw); margin-bottom:9px; }
+  .hsb-kaart-tekst { font-size:13px; color:var(--tekst-zacht); line-height:1.7; }
+
+  /* FOTO 2-KOL */
+  .foto-kolom { display:grid; grid-template-columns:1fr 1fr; gap:4px; margin-top:4px; }
+
+  .foto-kolom-item { height:360px; overflow:hidden; position:relative; }
+
+  .foto-kolom-item img {
+    width:100%; height:100%; object-fit:cover;
+    transition:transform 0.5s ease;
+  }
+
+  .foto-kolom-item:hover img { transform:scale(1.03); }
+
+  .foto-kolom-cap {
+    position:absolute; bottom:0; left:0; right:0;
+    background:linear-gradient(transparent, rgba(27,58,92,0.72));
+    padding:22px 18px 14px; color:white;
+  }
+
+  .foto-kolom-cap strong { display:block; font-size:14px; font-weight:600; margin-bottom:2px; }
+  .foto-kolom-cap span { font-size:12px; color:rgba(255,255,255,0.6); }
+
+  /* OVER ONS */
+  .over-grid {
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:64px; align-items:start; margin-top:48px;
+  }
+
+  .over-foto { position:relative; }
+
+  .over-foto img { width:100%; height:480px; object-fit:cover; display:block; }
+
+  .over-badge {
+    position:absolute; bottom:-18px; right:-18px;
+    background:var(--accent); padding:18px 22px; text-align:center;
+  }
+
+  .over-badge-getal {
+    font-family:'Merriweather',serif;
+    font-size:34px; font-weight:700; color:var(--blauw); line-height:1;
+  }
+
+  .over-badge-tekst {
+    font-size:10px; color:var(--blauw);
+    letter-spacing:0.07em; text-transform:uppercase; margin-top:3px;
+  }
+
+  .over-tekst { display:flex; flex-direction:column; gap:18px; padding-top:6px; }
+
+  .over-p { font-size:15px; line-height:1.85; color:var(--tekst-zacht); }
+
+  .over-quote {
+    font-family:'Merriweather',serif;
+    font-size:17px; font-style:italic; color:var(--blauw);
+    line-height:1.65; padding-left:18px;
+    border-left:3px solid var(--accent); margin:6px 0;
+  }
+
+  .tijdlijn { margin-top:20px; display:flex; flex-direction:column; }
+
+  .tijdlijn-item {
+    display:flex; gap:14px; padding:13px 0;
+    border-bottom:1px solid var(--grijs-mid);
+  }
+
+  .tijdlijn-item:last-child { border-bottom:none; }
+
+  .tijdlijn-jaar {
+    font-family:'Merriweather',serif;
+    font-size:12px; font-weight:700; color:var(--blauw-licht);
+    min-width:46px; flex-shrink:0;
+  }
+
+  .tijdlijn-tekst { font-size:13px; color:var(--tekst-zacht); line-height:1.6; }
+  .tijdlijn-tekst strong { color:var(--blauw); font-weight:600; }
+
+  /* REVIEWS */
+  .reviews-bg { background:var(--blauw); }
+
+  .reviews-grid {
+    display:grid; grid-template-columns:repeat(3,1fr);
+    gap:18px; margin-top:48px;
+  }
+
+  .review {
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:26px;
+    transition:background 0.2s;
+  }
+
+  .review:hover { background:rgba(255,255,255,0.1); }
+
+  .review-sterren { display:flex; gap:3px; margin-bottom:13px; }
+
+  .ster {
+    width:13px; height:13px; background:var(--accent);
+    clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+  }
+
+  .review-tekst {
+    font-size:14px; line-height:1.8; color:rgba(255,255,255,0.7);
+    font-style:italic; margin-bottom:16px;
+  }
+
+  .review-naam {
+    font-size:11px; font-weight:600; letter-spacing:0.07em;
+    text-transform:uppercase; color:var(--accent);
+  }
+
+  /* WERKGEBIED */
+  .werkgebied-grid {
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:64px; align-items:start; margin-top:48px;
+  }
+
+  .regio-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:22px; }
+
+  .regio {
+    padding:11px 14px; background:var(--blauw-zacht);
+    font-size:13px; color:var(--blauw); font-weight:500;
+    border-left:2px solid var(--blauw-licht);
+  }
+
+  .bijzonder-blok { background:var(--blauw); padding:24px; margin-top:14px; }
+  .bijzonder-blok.licht { background:var(--blauw-zacht); }
+
+  .bijzonder-kop { font-size:14px; font-weight:600; color:white; margin-bottom:5px; }
+  .bijzonder-blok.licht .bijzonder-kop { color:var(--blauw); }
+
+  .bijzonder-p { font-size:13px; color:rgba(255,255,255,0.58); line-height:1.7; }
+  .bijzonder-blok.licht .bijzonder-p { color:var(--tekst-zacht); }
+
+  .werkgebied-fotos { display:flex; flex-direction:column; gap:4px; }
+
+  .wg-foto { height:225px; overflow:hidden; position:relative; }
+  .wg-foto img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; }
+  .wg-foto:hover img { transform:scale(1.03); }
+
+  .wg-label {
+    position:absolute; bottom:10px; left:14px;
+    font-size:11px; font-weight:600; letter-spacing:0.1em;
+    text-transform:uppercase; color:white;
+    background:rgba(27,58,92,0.65); padding:3px 9px;
+  }
+
+  /* CONTACT */
+  .contact-bg { background:var(--grijs); }
+
+  .contact-grid {
+    display:grid; grid-template-columns:1fr 1.2fr;
+    gap:64px; margin-top:48px; align-items:start;
+  }
+
+  .contact-info { display:flex; flex-direction:column; }
+
+  .contact-rij {
+    padding:18px 0; border-bottom:1px solid var(--grijs-mid);
+    display:flex; flex-direction:column; gap:4px;
+  }
+
+  .contact-rij:first-child { padding-top:0; }
+  .contact-rij:last-child { border-bottom:none; }
+
+  .contact-label {
+    font-size:10px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--grijs-donker); font-weight:600;
+  }
+
+  .contact-waarde {
+    font-size:16px; color:var(--blauw);
+    text-decoration:none; font-weight:500; transition:color 0.2s;
+  }
+
+  .contact-waarde:hover { color:var(--blauw-licht); }
+
+  .contact-form {
+    background:white; padding:34px;
+    box-shadow:0 2px 20px rgba(27,58,92,0.07);
+  }
+
+  .form-kop {
+    font-family:'Merriweather',serif;
+    font-size:18px; font-weight:700; color:var(--blauw); margin-bottom:4px;
+  }
+
+  .form-sub { font-size:13px; color:var(--tekst-zacht); margin-bottom:20px; }
+
+  .form-rij { display:grid; grid-template-columns:1fr 1fr; gap:13px; margin-bottom:13px; }
+
+  .form-veld { display:flex; flex-direction:column; gap:5px; margin-bottom:13px; }
+  .form-veld:last-of-type { margin-bottom:16px; }
+
+  .form-veld label {
+    font-size:10px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--grijs-donker); font-weight:600;
+  }
+
+  .form-veld input,
+  .form-veld textarea {
+    padding:11px 13px;
+    border:1.5px solid var(--grijs-mid);
+    font-family:'Source Sans 3',sans-serif;
+    font-size:14px; color:var(--tekst); background:var(--grijs);
+    transition:border-color 0.2s, background 0.2s; outline:none;
+  }
+
+  .form-veld input:focus,
+  .form-veld textarea:focus {
+    border-color:var(--blauw-licht); background:white;
+  }
+
+  .form-veld textarea { height:108px; resize:vertical; }
+
+  .form-submit {
+    background:var(--blauw); color:white; border:none;
+    padding:13px 26px;
+    font-family:'Source Sans 3',sans-serif;
+    font-size:14px; font-weight:600; letter-spacing:0.04em;
+    cursor:pointer; transition:background 0.2s;
+  }
+
+  .form-submit:hover { background:var(--blauw-mid); }
+
+  /* FOOTER */
+  footer {
+    background:var(--blauw); padding:38px 80px;
+    display:flex; justify-content:space-between; align-items:center;
+    gap:20px; flex-wrap:wrap; border-top:3px solid var(--accent);
+  }
+
+  .footer-naam {
+    font-family:'Merriweather',serif;
+    font-size:15px; font-weight:700; color:white;
+  }
+
+  .footer-slogan {
+    font-style:italic; font-size:13px;
+    color:rgba(255,255,255,0.38); margin-top:3px;
+  }
+
+  .footer-rechts { display:flex; gap:22px; align-items:center; flex-wrap:wrap; }
+
+  .footer-rechts a {
+    font-size:12px; color:rgba(255,255,255,0.38);
+    text-decoration:none; transition:color 0.2s;
+  }
+
+  .footer-rechts a:hover { color:rgba(255,255,255,0.75); }
+
+  /* MOBILE */
+  @media (max-width:900px) {
+    nav { padding:0 20px; }
+    .nav-links { display:none; }
+    .sectie { padding:54px 22px; }
+    .hero-content { padding:0 22px 56px; }
+    .fotogrid { grid-template-columns:1fr 1fr; grid-template-rows:auto; }
+    .foto-groot { grid-row:auto; height:220px; }
+    .foto { height:180px; }
+    .stat-bar { grid-template-columns:1fr 1fr; }
+    .werkwijze-grid, .over-grid, .werkgebied-grid, .contact-grid { grid-template-columns:1fr; gap:32px; }
+    .hsb-grid { grid-template-columns:1fr 1fr; }
+    .reviews-grid { grid-template-columns:1fr; }
+    .foto-kolom { grid-template-columns:1fr; }
+    .regio-grid { grid-template-columns:1fr; }
+    .form-rij { grid-template-columns:1fr; }
+    footer { padding:30px 22px; flex-direction:column; text-align:center; }
+    .over-badge { right:0; bottom:-14px; }
+    .foto-breed { height:260px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 10L10 3L18 10V18H13V13H7V18H2V10Z" fill="#1B3A5C"/>
+      </svg>
+    </div>
+    <div class="nav-logo-tekst">
+      Van der Woude
+      <span>Bouwbedrijf &nbsp;·&nbsp; Gorredijk</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#werkwijze">Werkwijze</a></li>
+    <li><a href="#over-ons">Over ons</a></li>
+    <li><a href="#houtskeletbouw">Houtskeletbouw</a></li>
+    <li><a href="#projecten">Projecten</a></li>
+    <li><a href="#reviews">Ervaringen</a></li>
+    <li><a href="#werkgebied">Werkgebied</a></li>
+    <li><a href="#contact" class="nav-cta">Neem contact op</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-sup">Bouwbedrijf Van der Woude &nbsp;&middot;&nbsp; Opgericht 1975 &nbsp;&middot;&nbsp; Noord-Nederland</div>
+    <h1 class="hero-kop">U de kavel,<br><em>wij de woning.</em></h1>
+    <p class="hero-sub">Al 50 jaar bouwen wij duurzame, energiezuinige woningen in houtskeletbouw. Van de eerste schets tot de sleuteloverdracht &mdash; wij nemen alles voor onze rekening.</p>
+    <div class="hero-knoppen">
+      <a href="#contact" class="btn-goud">Vrijblijvend kennismakingsgesprek</a>
+      <a href="#werkwijze" class="btn-wit">Hoe wij werken</a>
+    </div>
+  </div>
+</div>
+
+<div class="stat-bar">
+  <div class="stat-item">
+    <div class="stat-getal">50</div>
+    <div class="stat-label">Jaar ervaring in houtskeletbouw</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-getal">1975</div>
+    <div class="stat-label">Opgericht in Wolvega</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-getal">40</div>
+    <div class="stat-label">Vakkundige medewerkers</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-getal">1</div>
+    <div class="stat-label">Aanspreekpunt van A tot Z</div>
+  </div>
+</div>
+
+<section class="sectie" id="projecten">
+  <div class="sectie-binnen">
+    <div class="sectie-sup">Ons werk</div>
+    <h2 class="sectie-kop">Woningen die wij<br><em>hebben gebouwd</em></h2>
+    <p class="sectie-intro">Van vrijstaande woningen tot recreatiewoningen op de Waddeneilanden. Elk project is maatwerk, afgestemd op uw kavel en uw woonwensen.</p>
+
+    <div class="fotogrid">
+      <div class="foto foto-groot">
+        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=900&q=80" alt="Moderne houtskeletbouw woning">
+        <div class="foto-label">Vrijstaande woning &nbsp;&middot;&nbsp; Friesland</div>
+      </div>
+      <div class="foto">
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80" alt="Nieuwbouw woning">
+        <div class="foto-label">Nieuwbouw &nbsp;&middot;&nbsp; Leeuwarden</div>
+      </div>
+      <div class="foto">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Bouw in uitvoering">
+        <div class="foto-label">In aanbouw</div>
+      </div>
+      <div class="foto">
+        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="Landelijke woning">
+        <div class="foto-label">Schuurwoning &nbsp;&middot;&nbsp; Houtigehage</div>
+      </div>
+      <div class="foto">
+        <img src="https://images.unsplash.com/photo-1625602812206-5ec545ca1231?w=600&q=80" alt="Recreatiewoning">
+        <div class="foto-label">Recreatiewoning &nbsp;&middot;&nbsp; Terschelling</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sectie" id="werkwijze" style="background:var(--grijs);">
+  <div class="sectie-binnen">
+    <div class="sectie-sup">Hoe wij werken</div>
+    <h2 class="sectie-kop">Van uw kavel naar<br><em>sleuteloverdracht</em></h2>
+
+    <div class="werkwijze-grid">
+      <div class="stap-lijst">
+        <div class="stap">
+          <div class="stap-nr">01</div>
+          <div class="stap-body">
+            <strong>Kennismakingsgesprek</strong>
+            <p>U komt naar ons toe met uw kavel en woonwensen. Vrijblijvend en persoonlijk. Wij luisteren, denken mee en vertellen wat er mogelijk is.</p>
+          </div>
+        </div>
+        <div class="stap">
+          <div class="stap-nr">02</div>
+          <div class="stap-body">
+            <strong>Ontwerp en vergunning</strong>
+            <p>Samen met onze architecten werken we uw woning uit. Wij verzorgen de omgevingsvergunning &mdash; u hoeft daar niet voor te lopen.</p>
+          </div>
+        </div>
+        <div class="stap">
+          <div class="stap-nr">03</div>
+          <div class="stap-body">
+            <strong>Productie in eigen werkplaats</strong>
+            <p>Alle houtskeletbouw elementen worden prefab vervaardigd in onze werkplaats in Gorredijk. Nauwkeurig, onafhankelijk van het weer.</p>
+          </div>
+        </div>
+        <div class="stap">
+          <div class="stap-nr">04</div>
+          <div class="stap-body">
+            <strong>Montage op uw kavel</strong>
+            <p>Binnen enkele dagen staat het casco wind- en waterdicht. Snel, schoon en precies zoals getekend.</p>
+          </div>
+        </div>
+        <div class="stap">
+          <div class="stap-nr">05</div>
+          <div class="stap-body">
+            <strong>Afbouw en oplevering</strong>
+            <p>Van installaties tot afwerking &mdash; wij nemen het volledig op ons. U krijgt de sleutel van een woning die klaar is om in te trekken.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="inclusief-blok">
+        <div class="inclusief-kop">Standaard inbegrepen</div>
+        <div class="inclusief-sub">Bij elke woning van Van der Woude</div>
+        <ul class="inclusief-lijst">
+          <li><div class="check"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5L4 7.5L8.5 2.5" stroke="#1B3A5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Houtskeletbouw constructie (eigen productie)</li>
+          <li><div class="check"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5L4 7.5L8.5 2.5" stroke="#1B3A5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Luchtwarmtepomp</li>
+          <li><div class="check"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5L4 7.5L8.5 2.5" stroke="#1B3A5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Zonnepanelen</li>
+          <li><div class="check"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5L4 7.5L8.5 2.5" stroke="#1B3A5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Warmteterugwinning (WTW)</li>
+          <li><div class="check"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5L4 7.5L8.5 2.5" stroke="#1B3A5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Vloerverwarming</li>
+          <li><div class="check"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5L4 7.5L8.5 2.5" stroke="#1B3A5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Kunststof kozijnen met HR++ glas</li>
+          <li><div class="check"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5L4 7.5L8.5 2.5" stroke="#1B3A5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Omgevingsvergunning aanvraag</li>
+          <li><div class="check"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5L4 7.5L8.5 2.5" stroke="#1B3A5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Woningborg certificering</li>
+          <li><div class="check"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5L4 7.5L8.5 2.5" stroke="#1B3A5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Volledig projectmanagement</li>
+          <li><div class="check"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5L4 7.5L8.5 2.5" stroke="#1B3A5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Nazorg en garantie</li>
+        </ul>
+        <div class="woningborg">Woningborg gecertificeerd &nbsp;&middot;&nbsp; Gorredijk</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="foto-breed">
+  <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1800&q=80" alt="Bouwplaats">
+  <div class="foto-breed-overlay">
+    <div class="foto-breed-tekst">
+      <h2>"Bouwen met kennis,<br>leveren met trots."</h2>
+      <a href="#contact" class="btn-goud">Maak een afspraak</a>
+    </div>
+  </div>
+</div>
+
+<section class="sectie" id="houtskeletbouw">
+  <div class="sectie-binnen">
+    <div class="sectie-sup">Onze methode</div>
+    <h2 class="sectie-kop">Waarom<br><em>houtskeletbouw?</em></h2>
+    <p class="sectie-intro">Houtskeletbouw is een bewezen bouwtechniek waarbij een sterk raamwerk van hout de dragende constructie vormt. Alle elementen worden prefab gemaakt in onze eigen werkplaats in Gorredijk.</p>
+
+    <div class="hsb-grid">
+      <div class="hsb-kaart">
+        <div class="hsb-nr">01</div>
+        <div class="hsb-kaart-kop">Vrijheid in ontwerp</div>
+        <p class="hsb-kaart-tekst">Groot of klein, modern of klassiek &mdash; houtskeletbouw biedt haast eindeloze mogelijkheden. Uw woonwens staat centraal.</p>
+      </div>
+      <div class="hsb-kaart">
+        <div class="hsb-nr">02</div>
+        <div class="hsb-kaart-kop">Snel wind- en waterdicht</div>
+        <p class="hsb-kaart-tekst">Alle elementen worden in onze werkplaats geprefabriceerd. Op uw kavel staat het casco binnen enkele dagen overeind.</p>
+      </div>
+      <div class="hsb-kaart">
+        <div class="hsb-nr">03</div>
+        <div class="hsb-kaart-kop">Uitstekende isolatie</div>
+        <p class="hsb-kaart-tekst">Hout isoleert van nature goed. In combinatie met onze installaties haalt u moeiteloos het hoogste energielabel.</p>
+      </div>
+      <div class="hsb-kaart">
+        <div class="hsb-nr">04</div>
+        <div class="hsb-kaart-kop">Duurzaam materiaal</div>
+        <p class="hsb-kaart-tekst">Hout is hernieuwbaar. Elke woning die wij bouwen slaat CO&sup2; op in de constructie zelf.</p>
+      </div>
+      <div class="hsb-kaart">
+        <div class="hsb-nr">05</div>
+        <div class="hsb-kaart-kop">Brand- en geluidswerend</div>
+        <p class="hsb-kaart-tekst">Modern houtskeletbouw voldoet ruimschoots aan alle brand- en geluidsnormen. Veilig, stil en comfortabel.</p>
+      </div>
+      <div class="hsb-kaart">
+        <div class="hsb-nr">06</div>
+        <div class="hsb-kaart-kop">Flexibel uitbreidbaar</div>
+        <p class="hsb-kaart-tekst">Wilt u later een aanbouw of dakkapel? Houtskeletbouw laat zich eenvoudig uitbreiden zonder grote ingrepen.</p>
+      </div>
+    </div>
+
+    <div class="foto-kolom">
+      <div class="foto-kolom-item">
+        <img src="https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=900&q=80" alt="Houtskeletbouw constructie">
+        <div class="foto-kolom-cap">
+          <strong>Eigen productiehal</strong>
+          <span>Gorredijk, Friesland</span>
+        </div>
+      </div>
+      <div class="foto-kolom-item">
+        <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=900&q=80" alt="Opgeleverde woning">
+        <div class="foto-kolom-cap">
+          <strong>Oplevering op maat</strong>
+          <span>Van casco tot afgewerkt</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sectie" id="over-ons" style="background:var(--blauw-zacht);">
+  <div class="sectie-binnen">
+    <div class="sectie-sup">Ons verhaal</div>
+    <h2 class="sectie-kop">50 jaar bouwen<br><em>in Noord-Nederland</em></h2>
+
+    <div class="over-grid">
+      <div class="over-foto">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Bouwbedrijf Van der Woude">
+        <div class="over-badge">
+          <div class="over-badge-getal">50</div>
+          <div class="over-badge-tekst">Jaar vakmanschap</div>
+        </div>
+      </div>
+
+      <div class="over-tekst">
+        <blockquote class="over-quote">
+          "Wij bouwen geen woningen. Wij bouwen de plek waar uw gezin thuis is."
+        </blockquote>
+
+        <p class="over-p">Bouwbedrijf Van der Woude is een Noord-Fries bedrijf in hart en nieren. Opgericht in 1975 door Marten van der Woude als timmermanswerkplaats in Wolvega, uitgegroeid tot een van de meest ervaren houtskeletbouw-specialisten van Noord-Nederland.</p>
+
+        <p class="over-p">Wij geloven in korte lijnen, eerlijk vakmanschap en een persoonlijke aanpak. Geen grote bouwmaatschappij, maar een team van 40 mensen dat uw project kent van de eerste koffiepraatjes tot de sleuteloverdracht.</p>
+
+        <div class="tijdlijn">
+          <div class="tijdlijn-item">
+            <div class="tijdlijn-jaar">1975</div>
+            <div class="tijdlijn-tekst"><strong>Oprichting</strong> &mdash; Marten van der Woude start als timmerman in Wolvega, als een van de eerste HSB-specialisten van Noord-Nederland.</div>
+          </div>
+          <div class="tijdlijn-item">
+            <div class="tijdlijn-jaar">1980s</div>
+            <div class="tijdlijn-tekst"><strong>Groei</strong> &mdash; Eigen productiehal in Gorredijk. Werkgebied uitgebreid naar heel Noord-Nederland en de Waddeneilanden.</div>
+          </div>
+          <div class="tijdlijn-item">
+            <div class="tijdlijn-jaar">2e gen.</div>
+            <div class="tijdlijn-tekst"><strong>Oeds en Bert van der Woude</strong> nemen het bedrijf over. Sterke investering in automatisering en prefab productie.</div>
+          </div>
+          <div class="tijdlijn-item">
+            <div class="tijdlijn-jaar">2020</div>
+            <div class="tijdlijn-tekst"><strong>Erwin Faber</strong> neemt het bedrijf over. Nieuwe generatie, zelfde vakmanschap en persoonlijke aanpak.</div>
+          </div>
+          <div class="tijdlijn-item">
+            <div class="tijdlijn-jaar">2025</div>
+            <div class="tijdlijn-tekst"><strong>50-jarig jubileum</strong> &mdash; een halve eeuw houtskeletbouw in Noord-Nederland.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sectie reviews-bg" id="reviews">
+  <div class="sectie-binnen">
+    <div class="sectie-sup" style="color:var(--accent);">Klantenervaringen</div>
+    <h2 class="sectie-kop" style="color:white;">Wat bewoners<br><em style="color:rgba(255,255,255,0.38);">over ons zeggen</em></h2>
+
+    <div class="reviews-grid">
+      <div class="review">
+        <div class="review-sterren"><div class="ster"></div><div class="ster"></div><div class="ster"></div><div class="ster"></div><div class="ster"></div></div>
+        <p class="review-tekst">"Er werd vanaf het begin tot het einde meegedacht op alle werkgebieden. Wanneer zaken niet duidelijk waren werd dit altijd snel opgepakt dankzij de korte lijnen."</p>
+        <div class="review-naam">Klaas Jan de Groot</div>
+      </div>
+      <div class="review">
+        <div class="review-sterren"><div class="ster"></div><div class="ster"></div><div class="ster"></div><div class="ster"></div><div class="ster"></div></div>
+        <p class="review-tekst">"Goede tijdsplanning en keurige communicatie. Bouwbedrijf Van der Woude heeft een kwalitatief goed huis opgeleverd!"</p>
+        <div class="review-naam">Letty Strijker</div>
+      </div>
+      <div class="review">
+        <div class="review-sterren"><div class="ster"></div><div class="ster"></div><div class="ster"></div><div class="ster"></div><div class="ster"></div></div>
+        <p class="review-tekst">"Fijne samenwerking, korte lijntjes en ze denken goed mee. Onze vragen werden snel beantwoord. Wij zijn ontzettend blij in onze nieuwe woning."</p>
+        <div class="review-naam">Leon Koster</div>
+      </div>
+      <div class="review">
+        <div class="review-sterren"><div class="ster"></div><div class="ster"></div><div class="ster"></div><div class="ster"></div><div class="ster"></div></div>
+        <p class="review-tekst">"Van der Woude begreep uitstekend onze wensen en heeft dit weten te vertalen in een prachtig huis. Men stond steeds open voor vragen en opmerkingen."</p>
+        <div class="review-naam">Jan &amp; Kitty van Wagenberg</div>
+      </div>
+      <div class="review">
+        <div class="review-sterren"><div class="ster"></div><div class="ster"></div><div class="ster"></div><div class="ster"></div><div class="ster"></div></div>
+        <p class="review-tekst">"De communicatie is snel en persoonlijk, in overleg is een hoop mogelijk. De kwaliteit van bouwen is top."</p>
+        <div class="review-naam">Wiebe Groenewold</div>
+      </div>
+      <div class="review">
+        <div class="review-sterren"><div class="ster"></div><div class="ster"></div><div class="ster"></div><div class="ster"></div><div class="ster"></div></div>
+        <p class="review-tekst">"Een goed bedrijf met korte lijntjes. Goede communicatie met de mensen op de bouw."</p>
+        <div class="review-naam">Bert Kamstra</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sectie" id="werkgebied">
+  <div class="sectie-binnen">
+    <div class="sectie-sup">Werkgebied</div>
+    <h2 class="sectie-kop">Actief door heel<br><em>Noord-Nederland</em></h2>
+
+    <div class="werkgebied-grid">
+      <div>
+        <p class="sectie-intro">Wij zijn actief in heel Noord-Nederland. Of uw kavel nu in de stad ligt, in een dorpskern of op een eiland &mdash; wij komen naar u toe.</p>
+
+        <div class="regio-grid">
+          <div class="regio">Friesland</div>
+          <div class="regio">Groningen</div>
+          <div class="regio">Drenthe</div>
+          <div class="regio">Leeuwarden</div>
+          <div class="regio">Drachten</div>
+          <div class="regio">Heerenveen</div>
+          <div class="regio">Dokkum</div>
+          <div class="regio">Assen</div>
+        </div>
+
+        <div class="bijzonder-blok">
+          <div class="bijzonder-kop">Waddeneilanden</div>
+          <p class="bijzonder-p">Wij hebben ruime ervaring met bouwen op Terschelling en de andere Waddeneilanden. Logistiek uitdagend &mdash; voor ons geen enkel probleem.</p>
+        </div>
+
+        <div class="bijzonder-blok licht">
+          <div class="bijzonder-kop">Aardbevingsbestendig bouwen</div>
+          <p class="bijzonder-p">Houtskeletbouw is door zijn lichte gewicht en flexibele constructie van nature geschikt voor aardbevingsgevoelige gebieden in Groningen. Wij hebben aantoonbare ervaring met versterkte bouw, zoals ons project in Overschild.</p>
+        </div>
+      </div>
+
+      <div class="werkgebied-fotos">
+        <div class="wg-foto">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Friesland">
+          <div class="wg-label">Friesland</div>
+        </div>
+        <div class="wg-foto">
+          <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800&q=80" alt="Groningen">
+          <div class="wg-label">Groningen &amp; Drenthe</div>
+        </div>
+        <div class="wg-foto">
+          <img src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=800&q=80" alt="Waddeneilanden">
+          <div class="wg-label">Waddeneilanden</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sectie contact-bg" id="contact">
+  <div class="sectie-binnen">
+    <div class="sectie-sup">Contact</div>
+    <h2 class="sectie-kop">Heeft u een kavel?<br><em>Neem contact op.</em></h2>
+
+    <div class="contact-grid">
+      <div>
+        <p style="font-size:15px;color:var(--tekst-zacht);line-height:1.8;margin-bottom:34px;max-width:380px;">
+          Bel ons, stuur een mail of vul het formulier in. Wij reageren snel en persoonlijk &mdash; zoals u van ons gewend bent.
+        </p>
+
+        <div class="contact-info">
+          <div class="contact-rij">
+            <div class="contact-label">Telefoon</div>
+            <a href="tel:0513465600" class="contact-waarde">0513 &ndash; 46 56 00</a>
+          </div>
+          <div class="contact-rij">
+            <div class="contact-label">E-mail</div>
+            <a href="mailto:info@bouwbedrijfvdwoude.nl" class="contact-waarde">info@bouwbedrijfvdwoude.nl</a>
+          </div>
+          <div class="contact-rij">
+            <div class="contact-label">Bezoekadres</div>
+            <span class="contact-waarde" style="cursor:default;">Leitswei 21, 8401 CL Gorredijk</span>
+          </div>
+          <div class="contact-rij">
+            <div class="contact-label">Werkgebied</div>
+            <span class="contact-waarde" style="cursor:default;">Heel Noord-Nederland &amp; Waddeneilanden</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <div class="form-kop">Stuur een bericht</div>
+        <div class="form-sub">Wij reageren binnen 1 werkdag.</div>
+
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-rij">
+            <div class="form-veld" style="margin-bottom:0;">
+              <label>Voornaam</label>
+              <input type="text" placeholder="Jan" required>
+            </div>
+            <div class="form-veld" style="margin-bottom:0;">
+              <label>Achternaam</label>
+              <input type="text" placeholder="de Vries" required>
+            </div>
+          </div>
+          <div class="form-rij" style="margin-top:13px;">
+            <div class="form-veld" style="margin-bottom:0;">
+              <label>Telefoon</label>
+              <input type="tel" placeholder="06 12 34 56 78">
+            </div>
+            <div class="form-veld" style="margin-bottom:0;">
+              <label>E-mail</label>
+              <input type="email" placeholder="jan@example.nl" required>
+            </div>
+          </div>
+          <div class="form-veld" style="margin-top:13px;">
+            <label>Locatie van uw kavel</label>
+            <input type="text" placeholder="Bijv. Drachten, Friesland">
+          </div>
+          <div class="form-veld">
+            <label>Uw bericht</label>
+            <textarea placeholder="Vertel ons over uw woonwensen en uw kavel..."></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="submitBtn">Verstuur bericht</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-naam">Bouwbedrijf Van der Woude</div>
+    <div class="footer-slogan">U de kavel, wij de woning.</div>
+  </div>
+  <div class="footer-rechts">
+    <a href="mailto:info@bouwbedrijfvdwoude.nl">info@bouwbedrijfvdwoude.nl</a>
+    <a href="tel:0513465600">0513 &ndash; 46 56 00</a>
+    <a href="#">Privacy</a>
+    <a href="#">Sitemap</a>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.07 });
+
+  document.querySelectorAll('.hsb-kaart, .review, .stap, .tijdlijn-item, .regio').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(14px)';
+    el.style.transition = `opacity 0.4s ${i*0.035}s ease, transform 0.4s ${i*0.035}s ease`;
+    observer.observe(el);
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.textContent = 'Verstuurd!';
+    btn.style.background = '#2A6040';
+    setTimeout(() => {
+      btn.textContent = 'Verstuur bericht';
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  }
+</script>
+</body>
+</html>
